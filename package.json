@@ -1,0 +1,53 @@
+{
+	"name": "rehype-color-preview",
+	"version": "0.1.0",
+	"description": "A rehype plugin for color previews.",
+	"engines": {
+		"node": ">=18",
+		"pnpm": ">=8"
+	},
+	"scripts": {
+		"test": "vitest dev",
+		"build": "unbuild",
+		"prepublish": "pnpm run build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/theonlytails/rehype-color-preview.git"
+	},
+	"keywords": [
+		"rehype"
+	],
+	"author": {
+		"name": "TheOnlyTails"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/theonlytails/rehype-color-preview/issues"
+	},
+	"homepage": "https://github.com/theonlytails/rehype-color-preview#readme",
+	"devDependencies": {
+		"@types/hast": "^3.0.0",
+		"prettier": "^3.0.1",
+		"rehype-stringify": "^9.0.3",
+		"remark-parse": "^10.0.2",
+		"remark-rehype": "^10.1.0",
+		"typescript": "^5.1.6",
+		"unbuild": "^1.2.1",
+		"unified": "^10.1.2",
+		"unist-util-visit": "^5.0.0",
+		"vitest": "^0.34.1"
+	},
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"main": "./dist/index.cjs",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	]
+}
