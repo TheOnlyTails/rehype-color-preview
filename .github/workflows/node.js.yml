@@ -29,4 +29,4 @@ jobs:
       run: pnpm install
 
     - name: Run tests
-      run: pnpm run test
+      run: pnpm run test --run # this disables vitest's watch mode
