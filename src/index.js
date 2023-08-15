@@ -1,31 +1,26 @@
-import type { Root } from "hast"
-import type { Plugin } from "unified"
 import { visit } from "unist-util-visit"
 
-export type Options = {
-	/**
-	 * @default "color"
-	 */
-	className?: string
-	/**
-	 * @default "color"
-	 */
-	cssVariable?: string
-	/**
-	 * @default /#[\da-fA-F]{6,8}/
-	 */
-	colorRegex?: RegExp
-}
+/**
+ * @typedef {import("hast").Root} Root
+ * @typedef {{ className?: string, cssVariable?: string, colorRegex?: RegExp }} Options
+ */
 
-const colorPreview: Plugin<[Options?], Root> = (options?: Options) => {
-	const defaultOptions: Required<Options> = {
+/**
+ * @type {import("unified").Plugin<[Options?], import("hast").Root>}
+ * @returns {(ast: Root) => void}
+ */
+const colorPreview = (options) => {
+	/**
+	 * @type {Required<Options>}
+	 */
+	const defaultOptions = {
 		className: "color",
 		cssVariable: "color",
 		colorRegex: /#[\da-fA-F]{6,8}/,
 	}
 	const { className, cssVariable, colorRegex } = Object.assign(defaultOptions, options)
 
-	return (ast: Root) => {
+	return (ast) => {
 		visit(ast, "element", (node) => {
 			if (node.tagName !== "code") return
 			if (node.children.length !== 1) return
