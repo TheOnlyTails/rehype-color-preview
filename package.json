@@ -8,8 +8,10 @@
 		"pnpm": ">=8"
 	},
 	"scripts": {
+		"build": "dts-buddy",
 		"test": "vitest dev",
-		"prepublish": "pnpm run test --run"
+		"prepublish": "pnpm run test --run",
+		"prepublishOnly": "pnpm run build"
 	},
 	"repository": {
 		"type": "git",
@@ -24,10 +26,11 @@
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/theonlytails/rehype-color-preview/issues"
-	}, 
+	},
 	"homepage": "https://github.com/theonlytails/rehype-color-preview#readme",
 	"devDependencies": {
 		"@types/hast": "^3.0.0",
+		"dts-buddy": "^0.1.12",
 		"prettier": "^3.0.1",
 		"rehype-stringify": "^9.0.3",
 		"remark-parse": "^10.0.2",
@@ -48,6 +51,7 @@
 	},
 	"types": "./types/index.d.ts",
 	"files": [
-		"src", "types"
+		"src",
+		"types"
 	]
 }
