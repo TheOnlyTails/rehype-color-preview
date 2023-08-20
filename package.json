@@ -16,7 +16,10 @@
 		"url": "git+https://github.com/theonlytails/rehype-color-preview.git"
 	},
 	"keywords": [
-		"rehype"
+		"unified",
+		"rehype",
+		"rehype-plugin",
+		"plugin"
 	],
 	"author": {
 		"name": "TheOnlyTails"
@@ -26,7 +29,7 @@
 		"url": "https://github.com/theonlytails/rehype-color-preview/issues"
 	},
 	"homepage": "https://github.com/theonlytails/rehype-color-preview#readme",
-	"devDependencies": {
+	"dependencies": {
 		"@types/hast": "^3.0.0",
 		"prettier": "^3.0.1",
 		"rehype-stringify": "^9.0.3",
@@ -40,12 +43,7 @@
 		"vitest": "^0.34.1"
 	},
 	"type": "module",
-	"exports": {
-		".": {
-			"import": "./src/index.js",
-			"types": "./src/index.d.ts"
-		}
-	},
+	"main": "./src/index.js",
 	"types": "./src/index.d.ts",
 	"files": [
 		"src"
