@@ -1,15 +1,13 @@
 import { visit } from "unist-util-visit"
 
 /**
+ * @typedef {import(".").Options} Options
  * @typedef {import("hast").Root} Root
- * @typedef {{ className?: string, cssVariable?: string, colorRegex?: RegExp }} Options
+ *
+ * @type {import("unified").Plugin<[Options?], Root>}
+ * @returns {import("unified").Transformer<Root, Root>}
  */
-
-/**
- * @type {import("unified").Plugin<[Options?], import("hast").Root>}
- * @returns {(ast: Root) => void}
- */
-const colorPreview = (options) => {
+export default function colorPreview(options) {
 	/**
 	 * @type {Required<Options>}
 	 */
@@ -41,5 +39,3 @@ const colorPreview = (options) => {
 		})
 	}
 }
-
-export default colorPreview
